@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/core-js@2.4.1/client/shim.min.js"></script>
+    <script src="https://unpkg.com/zone.js@0.8.5"></script>
+    <script src="https://unpkg.com/systemjs@0.19.47/dist/system.src.js"></script>
+    <script src="https://unpkg.com/typescript@2.3.3"></script>
+    <script>
+    System.config({
+      transpiler : 'typescript',
+      map : {
+        'rxjs':"https://unpkg.com/rxjs@5.3.0",
+        '@angular/core':"https://unpkg.com/@angular/core@4.1.0",
+        '@angular/common':"https://unpkg.com/@angular/common@4.1.0",
+        '@angular/compiler':"https://unpkg.com/@angular/compiler@4.1.0",
+        '@angular/platform-browser':"https://unpkg.com/@angular/platform-browser@4.1.0",
+        '@angular/platform-browser-dynamic':"https://unpkg.com/@angular/platform-browser-dynamic@4.1.0"
+      }
+    })
+    System.import("main.ts")
+    /*
+    1. SCRIPT 태그
+      1) 클래스 데코레이터를 사용하기 위해 폴리필을 로드한다.
+      2) 변화감지를 위해 존.js를 쓴다.
+      3) 모듈 로더인 SystemJS를 로드
+      4) Typescript -> Javascript로 변환시킴.
+    2. System로더
+      1) transpiler : 모듈 로더가 동작하는 환경 설정
+      2) map : CDN을 가져옴.
+    3. 메인을 실행하기 위해 main.tx를 로드
+
+    4. unpkg : npm에 등록된 패키지들을 라이브러리 형태로 제공하는 콘텐츠 전달 네트워크
+    // git에 올라온건 바로 사용할 수 없다.
+    */
+    </script>
+  </head>
+  <body>
+    <hello-world></hello-world>
+  </body>
+</html>
